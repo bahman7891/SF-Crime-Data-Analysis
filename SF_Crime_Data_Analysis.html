@@ -11771,12 +11771,12 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The dataset was acquired from Kaggle <a href="https://www.kaggle.com/c/sf-crime">competition</a>. It portraits occurrances registered by SF Police department over 
 the years of 2003-2015. The purpose of this analysis is to gain the first insights into crime occurence in San Francsico, CA districts. Additionaly a first attempt has been made to use machine learnig algorithms to predict crime incidents in terms of time and location.</p>
-<p>Such project could enable help &amp; rescue teams, such as police, fire department and emergency medical services to prepare for upcoming events and better plan their work.</p>
+<p>Such studies could help rescue teams such as police, fire department and emergency medical services to prepare for upcoming events and better plan their work.</p>
 <p>Statistical anlaysis concepts include:</p>
 <ul>
 <li>Descriptive Statistics:<ul>
 <li>Summary statistics </li>
-<li>Exploratory Data Analysis with vizualizations</li>
+<li>Exploratory Data Analysis with visualizations</li>
 <li>Time series analysis</li>
 </ul>
 </li>
@@ -11969,7 +11969,7 @@ the years of 2003-2015. The purpose of this analysis is to gain the first insigh
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Data contains numerical features, categorical features, and date feature. We check the data types to see if they correspond to the dataset metadata.</p>
+<p>Data contains numerical (date, location) and categorical features.</p>
 
 </div>
 </div>
@@ -12059,7 +12059,7 @@ memory usage: 60.3+ MB
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There are around 878k events in the dataset. That seems to be more than enough to run an experiment on.</p>
+<p>There are around 878k events in the dataset. We run an experiment on this data.</p>
 
 </div>
 </div>
@@ -12091,7 +12091,7 @@ memory usage: 60.3+ MB
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Runnig the code below will create a map with location markers that are clustered if close together. The following data is for the first 100 entries of data.</p>
+<p>Runnig the code below will create a map with location markers that are clustered if close together. The following data is for the first 500 entries of data.</p>
 
 </div>
 </div>
@@ -12151,7 +12151,7 @@ memory usage: 60.3+ MB
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The dataset contains time series data (Day of the Week, Date, Time),however the data type is not defined as so. We convert the date and time to separate columns of year, month and hour. We ignore the minutes and seconds.</p>
+<p>The dataset contains time series data (Day of the Week, Date, Time), however the data type is not defined as so. We convert the date and time to separate columns of year, month and hour. We ignore the minutes and seconds.</p>
 
 </div>
 </div>
@@ -12358,6 +12358,16 @@ dtype: int64</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>no missing data.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12842,16 +12852,6 @@ PBgMBoPBYIwZrPFgMBgMBoMxZvwLpRft2PtvQrEAAAAASUVORK5CYII=
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The above indicates small variation in the total number of crimes throughout the years.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
@@ -13207,7 +13207,7 @@ oBhjjDHG8sQDKMYYY4yxPPEAijHGGGMsT/8A8LzNZCXGYW8AAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The same is true for distribution of crimes throught the week and months of the year.</p>
+<p>The distribution of crimes throught the week and months of the year do not show large variation.</p>
 
 </div>
 </div>
@@ -13757,7 +13757,7 @@ GoiIiEjK/wM+Crlqx1AHQAAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is important in a classification problem to pay attention to the distribution of classes in data. For a very imbalanced dataset it is unlikely to acheive a good model for all classes. As we can in see in the following the class distribution is highly imbalanced. That is why we will try to use oversampling in our training data.</p>
+<p>It is important in a classification problem to pay attention to the distribution of classes in data. For a very imbalanced dataset it is unlikely to acheive a good model for all classes. As we can see in the following the class distribution is highly imbalanced. That is why we will use oversampling later in our training data.</p>
 
 </div>
 </div>
@@ -16286,7 +16286,7 @@ ERERydT/AzObjNbTeHeiAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>From the above rolling average we do not see any significant mode of oscillation given the standar deviation. This analysis needs a further investigation into the modes of the oscillation and whether we can exctract beteer features from such time series in order to make a prediction. However the first impression is that the 6-month average number of crimes over the years of 2003-2015 has stayed between 300 to 500 with a standard deviation of less than 100.</p>
+<p>From the above rolling average we do not see any significant mode of oscillation given the standard deviation. This analysis needs a further investigation into the modes of the oscillation and whether we can exctract better features from such time series in order to make a prediction. However the first impression is that the 6-month average number of crimes over the years of 2003-2015 has stayed between 300 to 500 with a standard deviation of less than 100.</p>
 
 </div>
 </div>
@@ -16338,7 +16338,7 @@ ERERydT/AzObjNbTeHeiAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>we do not use address, resolution, description. We only use district and the date (month, year and hour).</p>
+<p>we do not use address, resolution, description. We only use district and the date (month, year and hour). We briefly discuss in conclusion section the reason for such feature selection.</p>
 
 </div>
 </div>
@@ -17268,7 +17268,7 @@ ZEcNCCGEEEJkRw0IIYQQQmRHDQghhBBCZEcNCCGEEEJk93+O+wTdX1ujBQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here we investigate whether an oversampling method of training would improve the performance of the random forest model:</p>
+<p>Here we investigate whether an oversampling method of training would improve the performance of the random forest model. Note that we only oversample the training set (splitted from the raw data).</p>
 
 </div>
 </div>
@@ -17464,6 +17464,8 @@ ZEcNCCGEEEJkRw0IIYQQQmRHDQghhBBCZEcNCCGEEEJk93+O+wTdX1ujBQAAAABJRU5ErkJggg==
 </li>
 <li><p>The number of crimes is staying in a window of 300 - 500 with the exception of 2008 and 2014.</p>
 </li>
+<li><p>The address and location (X, Y) and district are giving the same information. So for the sake of the computational time we ignored location and address features. In a better modeling one needs to exctract features from the address and location data. We also ignored the day of week in favor of hour, month and year again for the sake of computation time.</p>
+</li>
 </ul>
 <p>Random Forest does not perform well in predicting the crime category. Naive Bayes is performing better however it needs tuning.</p>
 <p>Three more ideas here could be implemented in predicting the crime category:</p>
@@ -17478,19 +17480,6 @@ ZEcNCCGEEEJkRw0IIYQQQmRHDQghhBBCZEcNCCGEEEJk93+O+wTdX1ujBQAAAABJRU5ErkJggg==
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
